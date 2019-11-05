@@ -116,6 +116,12 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="cocomusic"] floating enable border none 
 for_window [class="electron-netease-cloud-music"] floating enable border none
+for_window [class="netease-cloud-music"] floating enable border none
+for_window [title="Android Emulator - Pixel_3_XL_API_29:5554"] floating enable border none
+# for_window [class="spotify"] floating enable border none
+# for_window [class="Spotify"] floating enable border none
+for_window [class="Qq"] floating enable border none
+for_window [class="qq"] floating enable border none
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -185,7 +191,7 @@ exec --no-startup-id fcitx &
 exec_always --no-startup-id sh /$HOME/.config/polybar/launch.sh
 # Screen saver
 exec --no-startup-id xset dpms 600
-exec --no-startup-id xss-lock --  i3lock-fancy -f Monaco-for-Powerline
+exec --no-startup-id xss-lock -- i3lock-fancy
 
 # Theme colors
 # client.focused          #272827 #272827 #657b83 #272827 #272827
@@ -200,7 +206,7 @@ exec --no-startup-id xss-lock --  i3lock-fancy -f Monaco-for-Powerline
 gaps inner 18
 gaps outer -8
 
-# smart_gaps on
+smart_gaps on
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner

@@ -1,27 +1,27 @@
 [colors]
 
-yellow    =    #b58900
+yellow    =    #e5c07b
 orange    =    #cb4b16
-red       =    #dc322f
-magenta   =    #d33682
+red       =    #be5046
+magenta   =    #C678DD
 violet    =    #6c71c4
-blue      =    #268bd2
+blue      =    #56b6c2
 cyan      =    #2aa198
-green     =    #859900
+green     =    #98c379
 gray      =    #666666
 
-base03    =    #F2002b36
-base0     =    #839496
+base03    =    #282c34
+base0     =    #abb2bf
 
 [bar/polybar]
 
 width = 100%
-height = 30
+height = 33
 fixed-center = true
 
-border-top-size = 6
-border-right-size = 6
-border-left-size = 6
+;border-top-size = 6
+;border-right-size = 6
+;border-left-size = 6
 
 radius = 0
 
@@ -30,21 +30,25 @@ foreground = ${colors.base0}
 
 line-size = 3
 
-padding-left = 1
-module-margin-left = 1
-module-margin-right = 1
+padding-left = 0 
+padding-right = 1 
+module-margin-left = 1 
+module-margin-right = 1 
 
-font-0 = "Source Code Pro Semibold:size=11.5;1"
-font-1 = "Font Awesome 5 Free:style=Solid:size=11.5;1"
-font-2 = "Font Awesome 5 Brands:size=11.5;1"
+font-0 = "Source Code Pro Semibold:size=12;1"
+font-1 = "Font Awesome 5 Free:style=Solid:size=12;1"
+font-2 = "Font Awesome 5 Brands:size=12;1"
 
 modules-left = i3
 modules-center = date
-modules-right = cpu memory backlight alsa wlan eth battery powermenu tray-label
+modules-right = cpu memory backlight alsa wlan eth battery powermenu 
 
-tray-position = right
+;tray-position = right
 tray-background = ${colors.base03}
-tray-padding = 0
+tray-padding = 1
+tray-maxsize = 16
+tray-detached = false
+tray-scale = 1.0
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -122,14 +126,18 @@ adapter = ADP1
 
 format-charging = <animation-charging> <label-charging>
 format-discharging = <animation-discharging> <label-discharging>
+format-full = <ramp-capacity> <label-full>
 
 label-charging =  %percentage%%
-abel-discharging =  %percentage%%
+label-discharging =  %percentage%%
+label-full = %percentage%%
+
 animation-charging-0 =
 animation-charging-0-foreground = ${colors.green}
 animation-discharging-0 =
 animation-discharging-0-foreground = ${colors.green}
-
+ramp-capacity-0 =
+ramp-capacity-0-foreground = ${colors.green}
 
 [module/memory]
 type = internal/memory
@@ -158,7 +166,7 @@ interval = 3.0
 format-connected = <ramp-signal> <label-connected>
 format-connected-background = ${colors.base03}
 format-connected-padding = 0
-label-connected = %essid%
+label-connected = %local_ip%
 
 format-disconnected =
 
